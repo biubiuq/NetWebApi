@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "PSOoTkWqBCw2I1LpEZ4rRcN5TPg1Tex6rt++DBHomCfVrKIN6nWRAAjX9sdu/TwgFWjWuJaMmNzw/WzaZGNRSA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Administrator\\source\\repos\\NetWebApi\\NetCoreApi\\NetCoreApi\\NetCoreApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}
