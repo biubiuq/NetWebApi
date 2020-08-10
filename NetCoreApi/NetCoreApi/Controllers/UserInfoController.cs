@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using NetCoreApi.Entity;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -25,11 +26,16 @@ namespace NetCoreApi.Controllers
     {
       return "valueAAA";
     }
-
+        /// <summary>
+        /// 不能用string 作参数否则会报错异常
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
     // POST api/<UserInfoController>
     [HttpPost]
-    public void Post([FromBody] string value)
+    public UserInfo Post([FromBody] UserInfo value)
     {
+            return value;
     }
 
     // PUT api/<UserInfoController>/5
