@@ -1,0 +1,9 @@
+C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\DapperManager\bin\Debug\netcoreapp3.1\DapperManager.deps.json
+C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\DapperManager\bin\Debug\netcoreapp3.1\DapperManager.dll
+C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\DapperManager\obj\Debug\netcoreapp3.1\DapperManager.csprojAssemblyReference.cache
+C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\DapperManager\obj\Debug\netcoreapp3.1\DapperManager.AssemblyInfoInputs.cache
+C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\DapperManager\obj\Debug\netcoreapp3.1\DapperManager.AssemblyInfo.cs
+C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\DapperManager\obj\Debug\netcoreapp3.1\DapperManager.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\DapperManager\bin\Debug\netcoreapp3.1\DapperManager.pdb
+C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\DapperManager\obj\Debug\netcoreapp3.1\DapperManager.dll
+C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\DapperManager\obj\Debug\netcoreapp3.1\DapperManager.pdb

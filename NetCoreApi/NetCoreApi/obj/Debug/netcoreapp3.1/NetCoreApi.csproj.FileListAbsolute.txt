@@ -49,7 +49,6 @@ C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\NetCoreApi\bin\Debug\ne
 C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\NetCoreApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\NetCoreApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\NetCoreApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\NetCoreApi\obj\Debug\netcoreapp3.1\NetCoreApi.csprojAssemblyReference.cache
 C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\NetCoreApi\obj\Debug\netcoreapp3.1\NetCoreApi.AssemblyInfoInputs.cache
 C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\NetCoreApi\obj\Debug\netcoreapp3.1\NetCoreApi.AssemblyInfo.cs
 C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\NetCoreApi\obj\Debug\netcoreapp3.1\NetCoreApi.csproj.CoreCompileInputs.cache
@@ -62,3 +61,4 @@ C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\NetCoreApi\obj\Debug\ne
 C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\NetCoreApi\obj\Debug\netcoreapp3.1\NetCoreApi.dll
 C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\NetCoreApi\obj\Debug\netcoreapp3.1\NetCoreApi.pdb
 C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\NetCoreApi\obj\Debug\netcoreapp3.1\NetCoreApi.genruntimeconfig.cache
+C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\NetCoreApi\obj\Debug\netcoreapp3.1\NetCoreApi.csprojAssemblyReference.cache
