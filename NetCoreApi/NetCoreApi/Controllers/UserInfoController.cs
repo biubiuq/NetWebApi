@@ -30,6 +30,8 @@ namespace NetCoreApi.Controllers
     [HttpPost]
     public void Post([FromBody] string value)
     {
+      ////-----测试代码
+       value = "2222";
     }
 
     // PUT api/<UserInfoController>/5
