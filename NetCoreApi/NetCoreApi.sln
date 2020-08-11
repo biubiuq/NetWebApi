@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreApi", "NetCoreApi\NetCoreApi.csproj", "{78C2A86A-F512-437D-8DC6-00E69E34BA65}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperServer", "DapperServer\DapperServer.csproj", "{427A3531-B247-4CBB-8792-0E6B31FADCDA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dapper", "Dapper", "{6B922250-20F9-4B24-A3FA-9B479390B999}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +19,16 @@ Global
 		{78C2A86A-F512-437D-8DC6-00E69E34BA65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78C2A86A-F512-437D-8DC6-00E69E34BA65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78C2A86A-F512-437D-8DC6-00E69E34BA65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{427A3531-B247-4CBB-8792-0E6B31FADCDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{427A3531-B247-4CBB-8792-0E6B31FADCDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{427A3531-B247-4CBB-8792-0E6B31FADCDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{427A3531-B247-4CBB-8792-0E6B31FADCDA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{427A3531-B247-4CBB-8792-0E6B31FADCDA} = {6B922250-20F9-4B24-A3FA-9B479390B999}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {39520788-0EEC-4161-85D3-4D956DAFF9E9}
