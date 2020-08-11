@@ -32,7 +32,7 @@ namespace DapperManager
     private DapperHelper()
     {
       // 这里为了方便演示直接写的字符串，实例项目中可以将连接字符串放在配置文件中，再进行读取。
-      _connection = @"server=.;uid=sa;pwd=sasasa;database=Dapper";
+      _connection = @"server=.;uid=sa;pwd=123456;database=JGEQ";
     }
 
     /// <summary>

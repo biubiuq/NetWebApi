@@ -61,4 +61,3 @@ C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\NetCoreApi\obj\Debug\ne
 C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\NetCoreApi\obj\Debug\netcoreapp3.1\NetCoreApi.dll
 C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\NetCoreApi\obj\Debug\netcoreapp3.1\NetCoreApi.pdb
 C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\NetCoreApi\obj\Debug\netcoreapp3.1\NetCoreApi.genruntimeconfig.cache
-C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\NetCoreApi\obj\Debug\netcoreapp3.1\NetCoreApi.csprojAssemblyReference.cache
