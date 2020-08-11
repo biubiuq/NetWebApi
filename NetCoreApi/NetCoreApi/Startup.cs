@@ -11,9 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Serialization;
-using Swashbuckle.AspNetCore.Swagger;
 
 namespace NetCoreApi
 {
@@ -39,7 +37,7 @@ namespace NetCoreApi
             {
 
 
-            }).AddNewtonsoftJson(setup =>////·µ»ØµÄ¸ñÊ½
+            }).AddNewtonsoftJson(setup =>////è¿”å›žçš„æ ¼å¼
             {
                 setup.SerializerSettings.ContractResolver =
                     new CamelCasePropertyNamesContractResolver();
@@ -50,9 +48,9 @@ namespace NetCoreApi
                     var problemDetails = new ValidationProblemDetails(context.ModelState)
                     {
                         Type = "http://www.baidu.com",
-                        Title = "ÓÐ´íÎó£¡£¡£¡",
+                        Title = "æœ‰é”™è¯¯ï¼ï¼ï¼",
                         Status = StatusCodes.Status422UnprocessableEntity,
-                        Detail = "Çë¿´ÏêÏ¸ÐÅÏ¢",
+                        Detail = "è¯·çœ‹è¯¦ç»†ä¿¡æ¯",
                         Instance = context.HttpContext.Request.Path
                     };
 
@@ -74,9 +72,9 @@ namespace NetCoreApi
             {
                 app.UseDeveloperExceptionPage();
             }
-            ///httpsÅäÖÃ
+            ///httpsé…ç½®
           //  app.UseHttpsRedirection();
-            ////UseSwaggerUI ºÍ
+            ////UseSwaggerUI å’Œ
             app.UseRouting();
             app.UseSwagger();
             app.UseSwaggerUI(c =>

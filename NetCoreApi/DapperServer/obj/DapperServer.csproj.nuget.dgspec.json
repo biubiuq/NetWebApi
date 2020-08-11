@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Administrator\\source\\repos\\NetWebApi\\NetCoreApi\\NetCoreApi\\NetCoreApi.csproj": {}
+    "C:\\Users\\Administrator\\source\\repos\\NetWebApi\\NetCoreApi\\DapperServer\\DapperServer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Administrator\\source\\repos\\NetWebApi\\NetCoreApi\\NetCoreApi\\NetCoreApi.csproj": {
+    "C:\\Users\\Administrator\\source\\repos\\NetWebApi\\NetCoreApi\\DapperServer\\DapperServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\source\\repos\\NetWebApi\\NetCoreApi\\NetCoreApi\\NetCoreApi.csproj",
-        "projectName": "NetCoreApi",
-        "projectPath": "C:\\Users\\Administrator\\source\\repos\\NetWebApi\\NetCoreApi\\NetCoreApi\\NetCoreApi.csproj",
+        "projectUniqueName": "C:\\Users\\Administrator\\source\\repos\\NetWebApi\\NetCoreApi\\DapperServer\\DapperServer.csproj",
+        "projectName": "DapperServer",
+        "projectPath": "C:\\Users\\Administrator\\source\\repos\\NetWebApi\\NetCoreApi\\DapperServer\\DapperServer.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\source\\repos\\NetWebApi\\NetCoreApi\\NetCoreApi\\obj\\",
+        "outputPath": "C:\\Users\\Administrator\\source\\repos\\NetWebApi\\NetCoreApi\\DapperServer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -38,25 +38,17 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "Microsoft.AspNetCore.Mvc.Formatters.Json": {
+            "Dapper": {
               "target": "Package",
-              "version": "[2.2.0, )"
+              "version": "[2.0.35, )"
             },
-            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+            "Dapper.Contrib": {
               "target": "Package",
-              "version": "[3.1.6, )"
+              "version": "[2.0.35, )"
             },
-            "Newtonsoft.Json": {
+            "System.Data.SqlClient": {
               "target": "Package",
-              "version": "[12.0.3, )"
-            },
-            "Swashbuckle.AspNetCore.SwaggerGen": {
-              "target": "Package",
-              "version": "[5.5.1, )"
-            },
-            "Swashbuckle.AspNetCore.SwaggerUi": {
-              "target": "Package",
-              "version": "[5.5.1, )"
+              "version": "[4.8.1, )"
             }
           },
           "imports": [
@@ -76,9 +68,6 @@
             }
           ],
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
