@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Text;
 using Dapper.Contrib.Extensions;
 
-namespace DapperManager.Entity
+namespace DapperManager
 {
-  public class UserInfo
+    [Table("UserInfo")]
+    public class UserInfo
   {
-    [Key]
-    public int Id { get; set; }
+     [Key]
+    public String Id { get; set; }
+        public string Name { get; set; }
 
-  }
+    }
 }

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DapperManager;
 using Microsoft.AspNetCore.Mvc;
 using NetCoreApi.Entity;
 
@@ -13,10 +14,15 @@ namespace NetCoreApi.Controllers
   [ApiController]
   public class UserInfoController : ControllerBase
   {
-    // GET: api/<UserInfoController>
-    [HttpGet]
+        private UserInfoServer db = new UserInfoServer();
+      public  SqlRepository<UserInfo> aa = new DapperManager.SqlRepository<UserInfo>();
+
+       // GET: api/<UserInfoController>
+       [HttpGet]
     public IEnumerable<string> Get()
     {
+            aa.Insert(new UserInfo() {Name="2222",Id="2222" });
+        db.AddUser();
       return new string[] { "value1", "value2" };
     }
 
@@ -35,6 +41,7 @@ namespace NetCoreApi.Controllers
     [HttpPost]
     public UserInfo Post([FromBody] UserInfo value)
     {
+
             return value;
     }
 

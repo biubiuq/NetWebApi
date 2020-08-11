@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NetCoreApi.Entity
 {
-    public class UserInfo:IValidatableObject
+    public class UserInfo22:IValidatableObject
     {
         
         public string Name { get; set; }

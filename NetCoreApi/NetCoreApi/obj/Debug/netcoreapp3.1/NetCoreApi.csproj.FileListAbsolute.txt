@@ -27,9 +27,6 @@ C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\NetCoreApi\bin\Debug\netcoreapp
 C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\NetCoreApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\NetCoreApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\NetCoreApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\NetCoreApi\obj\Debug\netcoreapp3.1\NetCoreApi.csproj.CoreCompileInputs.cache
-C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\NetCoreApi\obj\Debug\netcoreapp3.1\NetCoreApi.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\NetCoreApi\obj\Debug\netcoreapp3.1\NetCoreApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\NetCoreApi\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\NetCoreApi\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\NetCoreApi\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
@@ -61,3 +58,17 @@ C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\NetCoreApi\obj\Debug\ne
 C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\NetCoreApi\obj\Debug\netcoreapp3.1\NetCoreApi.dll
 C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\NetCoreApi\obj\Debug\netcoreapp3.1\NetCoreApi.pdb
 C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\NetCoreApi\obj\Debug\netcoreapp3.1\NetCoreApi.genruntimeconfig.cache
+C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\NetCoreApi\bin\Debug\netcoreapp3.1\Dapper.dll
+C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\NetCoreApi\bin\Debug\netcoreapp3.1\Dapper.Contrib.dll
+C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\NetCoreApi\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\NetCoreApi\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\NetCoreApi\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\NetCoreApi\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\NetCoreApi\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\NetCoreApi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\NetCoreApi\bin\Debug\netcoreapp3.1\DapperManager.dll
+C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\NetCoreApi\bin\Debug\netcoreapp3.1\DapperManager.pdb
+C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\NetCoreApi\obj\Debug\netcoreapp3.1\NetCoreApi.csproj.CoreCompileInputs.cache
+C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\NetCoreApi\obj\Debug\netcoreapp3.1\NetCoreApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\NetCoreApi\obj\Debug\netcoreapp3.1\NetCoreApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\NetCoreApi\bin\Debug\netcoreapp3.1\DapperExtensions.dll

@@ -1,20 +1,22 @@
+using Dapper.Contrib.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace DapperManager
 {
   public class DapperHelper
   {
     /// 数据库连接名
-    private static string _connection = string.Empty;
+    private static string ConnectionString = @"server=.;uid=sa;pwd=123456;database=JGEQ";
 
-    /// 获取连接名        
-    private static string Connection
+        /// 获取连接名        
+        private static string Connection
     {
-      get { return _connection; }
+      get { return ConnectionString; }
       //set { _connection = value; }
     }
 
@@ -31,8 +33,8 @@ namespace DapperManager
     /// </summary>
     private DapperHelper()
     {
-      // 这里为了方便演示直接写的字符串，实例项目中可以将连接字符串放在配置文件中，再进行读取。
-      _connection = @"server=.;uid=sa;pwd=123456;database=JGEQ";
+            // 这里为了方便演示直接写的字符串，实例项目中可以将连接字符串放在配置文件中，再进行读取。
+            ConnectionString = @"server=.;uid=sa;pwd=123456;database=JGEQ";
     }
 
     /// <summary>
@@ -73,5 +75,144 @@ namespace DapperManager
       }
       return dbConnection;
     }
-  }
+        public async Task<bool> InsertAsync<T>(T t) where T : class
+        {
+            using (IDbConnection connection = new SqlConnection(ConnectionString))
+            {
+                return await connection.InsertAsync(t) > 0;
+            }
+        }
+
+        public async Task<bool> InsertAsync<T>(List<T> list) where T : class
+        {
+            using (IDbConnection connection = new SqlConnection(ConnectionString))
+            {
+                return await connection.InsertAsync(list) > 0;
+            }
+        }
+
+        public async Task<bool> DeleteAsync<T>(T t) where T : class
+        {
+            using (IDbConnection connection = new SqlConnection(ConnectionString))
+            {
+                return await connection.DeleteAsync(t);
+            }
+        }
+
+        public async Task<bool> UpdateAsync<T>(T t) where T : class
+        {
+            using (IDbConnection connection = new SqlConnection(ConnectionString))
+            {
+                return await connection.UpdateAsync(t);
+            }
+        }
+
+        public async Task<IEnumerable<T>> GetAllAsync<T>() where T : class
+        {
+            using (IDbConnection connection = new SqlConnection(ConnectionString))
+            {
+                return await connection.GetAllAsync<T>();
+            }
+        }
+
+        public async Task<T> GetByIDAsync<T>(int id) where T : class
+        {
+            using (IDbConnection connection = new SqlConnection(ConnectionString))
+            {
+                return await connection.GetAsync<T>(id);
+            }
+        }
+
+        //public async Task<int> ExecuteAsync(string path)
+        //{
+        //    using (IDbConnection connection = new SqlConnection(ConnectionString))
+        //    {
+        //        using (StreamReader streamReader = new StreamReader(path, System.Text.Encoding.UTF8))
+        //        {
+        //            var script = await streamReader.ReadToEndAsync();
+        //            return await connection.ExecuteAsync(script);
+        //        }
+        //    }
+        //}
+
+        //public async Task<int> ExecuteAsync(string sql, object param = null)
+        //{
+        //    using (IDbConnection connection = new SqlConnection(ConnectionString))
+        //    {
+        //        return await connection.ExecuteAsync(sql, param);
+        //    }
+        //}
+
+        //public async Task<bool> ExecuteAsyncTransaction(List<string> list)
+        //{
+        //    using (IDbConnection connection = new SqlConnection(ConnectionString))
+        //    {
+        //        connection.Open();
+
+        //        IDbTransaction transaction = connection.BeginTransaction();
+
+        //        try
+        //        {
+        //            foreach (var sql in list)
+        //            {
+        //                await connection.ExecuteAsync(sql, null, transaction);
+        //            }
+
+        //            transaction.Commit();
+
+        //            return true;
+        //        }
+        //        catch (Exception e)
+        //        {
+        //            transaction.Rollback();
+
+        //            return false;
+        //        }
+        //    }
+        //}
+
+        //public async Task<bool> ExecuteAsyncTransaction(List<KeyValuePair<string, object>> list)
+        //{
+        //    using (IDbConnection connection = new SqlConnection(ConnectionString))
+        //    {
+        //        connection.Open();
+
+        //        IDbTransaction transaction = connection.BeginTransaction();
+
+        //        try
+        //        {
+        //            foreach (var item in list)
+        //            {
+        //                await connection.ExecuteAsync(item.Key, item.Value, transaction);
+        //            }
+
+        //            transaction.Commit();
+
+        //            return true;
+        //        }
+        //        catch (Exception e)
+        //        {
+        //            transaction.Rollback();
+
+        //            return false;
+        //        }
+        //    }
+        //}
+
+        //public async Task<IEnumerable<dynamic>> QueryAsync(string sql, object param = null)
+        //{
+        //    using (IDbConnection connection = new SqlConnection(ConnectionString))
+        //    {
+        //        return await connection.QueryAsync(sql, param);
+        //    }
+        //}
+
+        //public async Task<dynamic> QueryFirstOrDefaultAsync(string sql, object param = null)
+        //{
+        //    using (IDbConnection connection = new SqlConnection(ConnectionString))
+        //    {
+        //        return await connection.QueryFirstOrDefaultAsync(sql, param);
+        //    }
+        //}
+    }
 }
