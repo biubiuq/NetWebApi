@@ -14,16 +14,14 @@ namespace NetCoreApi.Controllers
   [ApiController]
   public class UserInfoController : ControllerBase
   {
-        private UserInfoServer db = new UserInfoServer();
-      public  SqlRepository<UserInfo> aa = new DapperManager.SqlRepository<UserInfo>();
+    
 
        // GET: api/<UserInfoController>
        [HttpGet]
-    public IEnumerable<string> Get()
+    public IEnumerable<UserInfo> Get()
     {
-            aa.Insert(new UserInfo() {Name="2222",Id="2222" });
-        db.AddUser();
-      return new string[] { "value1", "value2" };
+     
+      return null; 
     }
 
     // GET api/<UserInfoController>/5
@@ -33,7 +31,7 @@ namespace NetCoreApi.Controllers
       return "valueAAA";
     }
         /// <summary>
-        /// 不能用string 作参数否则会报错异常
+        /// 涓嶈兘鐢╯tring 浣滃弬鏁板惁鍒欎細鎶ラ敊寮傚父
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
@@ -41,8 +39,8 @@ namespace NetCoreApi.Controllers
     [HttpPost]
     public UserInfo Post([FromBody] UserInfo value)
     {
-
-            return value;
+   
+      return value;
     }
 
     // PUT api/<UserInfoController>/5

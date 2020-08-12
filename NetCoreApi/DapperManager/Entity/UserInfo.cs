@@ -8,8 +8,9 @@ namespace DapperManager
     [Table("UserInfo")]
     public class UserInfo
   {
-     [Key]
-    public String Id { get; set; }
+    [UniqueCheckIdValidate(ErrorMessage = "Id不可重复")]
+    public string Id { get; set; }
+
         public string Name { get; set; }
 
     }

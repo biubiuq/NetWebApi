@@ -14,3 +14,4 @@ C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\DapperManager\obj\Debug\netcore
 C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\DapperManager\obj\Debug\netcoreapp3.1\DapperManager.dll
 C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\DapperManager\obj\Debug\netcoreapp3.1\DapperManager.pdb
 C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\DapperManager\obj\Debug\netcoreapp3.1\DapperManager.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\DapperManager\obj\Debug\netcoreapp3.1\DapperManager.csprojAssemblyReference.cache
