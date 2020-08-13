@@ -9,6 +9,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dapper", "Dapper", "{6B9222
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DapperManager", "DapperManager\DapperManager.csproj", "{CEFAFEC3-879B-495D-A895-24D38988C605}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SqlSugar", "SqlSugar", "{084546CA-F45F-416B-A2BC-8E642099E000}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Manager", "Manager\Manager.csproj", "{3FA81ED1-12EA-44E9-8407-176EAE8DBB99}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,12 +27,17 @@ Global
 		{CEFAFEC3-879B-495D-A895-24D38988C605}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEFAFEC3-879B-495D-A895-24D38988C605}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEFAFEC3-879B-495D-A895-24D38988C605}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FA81ED1-12EA-44E9-8407-176EAE8DBB99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FA81ED1-12EA-44E9-8407-176EAE8DBB99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FA81ED1-12EA-44E9-8407-176EAE8DBB99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FA81ED1-12EA-44E9-8407-176EAE8DBB99}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{CEFAFEC3-879B-495D-A895-24D38988C605} = {6B922250-20F9-4B24-A3FA-9B479390B999}
+		{3FA81ED1-12EA-44E9-8407-176EAE8DBB99} = {084546CA-F45F-416B-A2BC-8E642099E000}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {39520788-0EEC-4161-85D3-4D956DAFF9E9}

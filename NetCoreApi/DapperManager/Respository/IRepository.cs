@@ -2,9 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq.Expressions;
 using System.Text;
 using Dapper.Contrib;
 using Dapper.Contrib.Extensions;
+
 
 namespace DapperManager
 {
@@ -16,13 +18,13 @@ namespace DapperManager
     /// </summary>
     /// <param name="t"></param>
     /// <returns></returns>
-    public T GetT(T t);
+    public T GetT(string t);
     /// <summary>
     /// 得到所有记录
     /// </summary>
     /// <param name="t"></param>
     /// <returns></returns>
-    public IEnumerable<T> GetListT(T t);
+    public IEnumerable<T> GetListT();
     /// <summary>
     /// 新增记录
     /// </summary>
@@ -35,6 +37,7 @@ namespace DapperManager
     /// <param name="t"></param>
     /// <returns></returns>
     public bool Update(T t);
+    public bool Delete(T t);
   }
 
   public class CommonRepository<T>: IRepository<T>
@@ -47,28 +50,49 @@ namespace DapperManager
     {
       using (IDbConnection db = GetDbConnection())
       {
-        return true;
+        if (db.Insert(t) == 1)
+        {
+          return true;
+        }
+        return false;
+      }
+    }
+
+    public bool Delete(T t)
+    {
+      using (IDbConnection db = GetDbConnection())
+      {
+        return db.Delete(t);
       }
     }
 
     public IDbConnection GetDbConnection()
     {
-      throw new NotImplementedException();
+      return  new SqlConnection(ConnectionString);
     }
 
-    public IEnumerable<T> GetListT(T t)
+    public IEnumerable<T> GetListT()
     {
-      throw new NotImplementedException();
+      using (IDbConnection db = GetDbConnection())
+      {
+        return db.GetAll<T>();
+      }
     }
-
-    public T GetT(T t)
+   
+    public T GetT(string t)
     {
-      throw new NotImplementedException();
+      using (IDbConnection db = GetDbConnection())
+      {
+        return db.Get<T>(t);
+      }
     }
 
     public bool Update(T t)
     {
-      throw new NotImplementedException();
+      using (IDbConnection db = GetDbConnection())
+      {
+        return db.Update(t);
+      }
     }
   }
 }

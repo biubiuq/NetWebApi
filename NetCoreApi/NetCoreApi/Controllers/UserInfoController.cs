@@ -14,21 +14,21 @@ namespace NetCoreApi.Controllers
   [ApiController]
   public class UserInfoController : ControllerBase
   {
-    
 
-       // GET: api/<UserInfoController>
-       [HttpGet]
+    public CommonRepository<UserInfo> _manger = new CommonRepository<UserInfo>();
+
+    // GET: api/<UserInfoController>
+    [HttpGet]
     public IEnumerable<UserInfo> Get()
     {
-     
-      return null; 
+        return  _manger.GetListT();
     }
 
     // GET api/<UserInfoController>/5
     [HttpGet("{id}")]
-    public string Get(int id)
+    public UserInfo Get(string id)
     {
-      return "valueAAA";
+      return _manger.GetT(id);
     }
         /// <summary>
         /// 不能用string 作参数否则会报错异常
@@ -37,22 +37,26 @@ namespace NetCoreApi.Controllers
         /// <returns></returns>
     // POST api/<UserInfoController>
     [HttpPost]
-    public UserInfo Post([FromBody] UserInfo value)
+    public bool Post([FromBody] UserInfo value)
     {
-   
-      return value;
+      return _manger.Add(value);
+     
     }
 
     // PUT api/<UserInfoController>/5
     [HttpPut("{id}")]
-    public void Put(int id, [FromBody] string value)
+    public void Put(string id, [FromBody] UserInfo value)
     {
+         value.ID = id;
+         _manger.Update(value);
     }
 
     // DELETE api/<UserInfoController>/5
     [HttpDelete("{id}")]
-    public void Delete(int id)
+    public void Delete(string id)
     {
+      _manger.Delete(new UserInfo() { ID = id });
     }
+    
   }
 }

@@ -13,6 +13,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Serialization;
+using Microsoft.EntityFrameworkCore;
+using NetCoreApi.Data;
 
 namespace NetCoreApi
 {
@@ -28,7 +30,17 @@ namespace NetCoreApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSwaggerGen(c =>
+      //添加cors 服务 配置跨域处理   
+      services.AddCors(options =>
+      {
+        options.AddPolicy("any", builder =>
+        {
+          builder.WithMethods("GET", "POST", "HEAD", "PUT", "DELETE", "OPTIONS")
+      //.AllowCredentials()//指定处理cookie
+      .AllowAnyOrigin().AllowAnyHeader(); //允许任何来源的主机访问
+        });
+      });
+      services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new  OpenApiInfo { Title = "My API", Version = "v1" });
             });
@@ -42,6 +54,7 @@ namespace NetCoreApi
             {
                 setup.SerializerSettings.ContractResolver =
                     new CamelCasePropertyNamesContractResolver();
+              setup.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
             }).AddXmlDataContractSerializerFormatters().ConfigureApiBehaviorOptions(setup =>
             {
                 setup.InvalidModelStateResponseFactory = context =>
@@ -63,6 +76,9 @@ namespace NetCoreApi
                     };
                 };
             });
+    
+      services.AddDbContext<NetCoreApiContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("NetCoreApiContext")));
 
         }
 
@@ -84,9 +100,10 @@ namespace NetCoreApi
             });
 
 
-            //    app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
+      //    app.UseAuthorization();
+      //配置Cors
+      app.UseCors("any");
+      app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
