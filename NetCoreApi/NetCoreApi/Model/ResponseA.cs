@@ -14,8 +14,15 @@ namespace NetCoreApi.Model
     /// <summary>
     /// 数据源
     /// </summary>
-    public dynamic Data { get; set; }
+    public dynamic Entity { get; set; }
 
     public bool Status { get; set; }
+  }
+  public class ResponseB: ResponseA
+  {
+    /// <summary>
+    /// 总行数
+    /// </summary>
+    public int total { get; set; }
   }
 }

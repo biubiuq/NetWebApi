@@ -21,17 +21,36 @@ namespace NetCoreApi.Controllers
     {
       _context = context;
     }
+    /// <summary>
+    /// 登录
+    /// </summary>
+    /// <param name="info"></param>
+    /// <returns></returns>
     [HttpPost]
     public async Task<ActionResult<ResponseA>> GetUserInfo([FromBody] UserInfo info)
     {
-      var aa = await _context.UserInfo.FirstOrDefaultAsync(x => x.ID == info.ID && x.Name == info.Name);
+      var aa = await _context.UserInfo.FirstOrDefaultAsync(x => x.Name == info.Name && x.Password == info.Password);
       if (aa == null)
       {
-        return new ResponseA() { Status = false, Data = aa, Msg="未找到该数据" };
+        return new ResponseA() { Status = false, Entity = aa, Msg="未找到该数据" };
       }
-      return new ResponseA() { Status = true, Data = aa };
+      return new ResponseA() { Status = true, Entity = aa };
     }
-
+    /// <summary>
+    /// 分页
+    /// </summary>
+    /// <param name="info"></param>
+    /// <returns></returns>
+    [HttpGet]
+    public  ActionResult<ResponseA> GetUsers(int pageNum, int pageSize)
+    {
+      var aa = _context.UserInfo.Skip(pageSize * (pageNum - 1)).Take(pageSize).OrderByDescending(a => a.Create_Date).AsQueryable();
+      if (aa == null)
+      {
+        return new ResponseA() { Status = false, Entity = aa, Msg = "未找到该数据" };
+      }
+      return new ResponseB() { Status = true, Entity = aa, total = _context.UserInfo.Count()};
+    }
     // GET: api/UserInfoes/5
     [HttpGet("{id}")]
     public async Task<ActionResult<UserInfo>> GetUserInfoById(string id)
@@ -84,13 +103,16 @@ namespace NetCoreApi.Controllers
     [HttpPost]
     public async Task<ActionResult<UserInfo>> PostUserInfo(UserInfo userInfo)
     {
+      userInfo.ID = Guid.NewGuid().ToString();
       _context.UserInfo.Add(userInfo);
       try
       {
+        _context.Entry(userInfo).State = EntityState.Added;
         await _context.SaveChangesAsync();
       }
-      catch (DbUpdateException)
+      catch (DbUpdateException e)
       {
+        var a = e;
         if (UserInfoExists(userInfo.ID))
         {
           return Conflict();
