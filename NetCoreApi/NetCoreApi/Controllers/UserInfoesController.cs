@@ -96,7 +96,13 @@ namespace NetCoreApi.Controllers
 
       return NoContent();
     }
-
+    [HttpGet]
+    public void GetSSS(
+          [ModelBinder(BinderType = typeof(ArrayModelBinder))]
+      List<String> ids)
+    {
+               ids.Add("aaa");
+    }
     // POST: api/UserInfoes
     // To protect from overposting attacks, enable the specific properties you want to bind to, for
     // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.

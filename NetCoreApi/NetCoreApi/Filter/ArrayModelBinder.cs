@@ -5,7 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 
-namespace Routine.APi.Helpers
+namespace NetCoreApi
 {
     /// <summary>
     /// 自定义 Model 绑定器，将 Uri Query 中的 Company ids 字符串处理为 IEnumerable<Guid>（视频P24)
