@@ -21,6 +21,21 @@ namespace NetCoreApi.Controllers
     {
       _context = context;
     }
+    [HttpPost]
+    public void GetEntity2(
+
+        [ModelBinder(BinderType = typeof(EntityModelBinder2))]
+       UserInfo   info)
+    {
+      info.Address = "";
+    }
+    [HttpGet]
+    public void GetSSS(
+        [ModelBinder(BinderType = typeof(ArrayModelBinder))]
+      List<String> ids)
+    {
+      ids.Add("aaa");
+    }
     /// <summary>
     /// 登录
     /// </summary>
@@ -96,13 +111,7 @@ namespace NetCoreApi.Controllers
 
       return NoContent();
     }
-    [HttpGet]
-    public void GetSSS(
-          [ModelBinder(BinderType = typeof(ArrayModelBinder))]
-      List<String> ids)
-    {
-               ids.Add("aaa");
-    }
+  
     // POST: api/UserInfoes
     // To protect from overposting attacks, enable the specific properties you want to bind to, for
     // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
