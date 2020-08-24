@@ -15,6 +15,7 @@ using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 using NetCoreApi.Data;
+using Newtonsoft.Json;
 
 namespace NetCoreApi
 {
@@ -51,11 +52,16 @@ namespace NetCoreApi
 
 
             }).AddNewtonsoftJson(setup =>////返回的格式
-            {
+            { ///设置首字母小写，如果不需要 则改为 DefaultContractResolver
                 setup.SerializerSettings.ContractResolver =
                     new CamelCasePropertyNamesContractResolver();
+              setup.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+             
               setup.SerializerSettings.DateFormatString = "yyyy-MM-dd HH:mm:ss";
-            }).AddXmlDataContractSerializerFormatters().ConfigureApiBehaviorOptions(setup =>
+             
+           
+            })
+            .AddXmlDataContractSerializerFormatters().ConfigureApiBehaviorOptions(setup =>
             {
                 setup.InvalidModelStateResponseFactory = context =>
                 {
