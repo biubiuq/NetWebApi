@@ -28,5 +28,7 @@
     <ProjectReference Include="..\DapperManager\DapperManager.csproj" />
   </ItemGroup>
 
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="https://raw.githubusercontent.com/dolittle/DotNET.Fundamentals/master/Schemas/Tenancy.Configuration/tenant-map.json" /></VisualStudio></ProjectExtensions>
+
 
 </Project>

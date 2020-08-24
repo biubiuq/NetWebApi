@@ -6,3 +6,4 @@ C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\Manager\obj\Debug\netco
 C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\Manager\obj\Debug\netcoreapp3.1\Manager.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\Manager\obj\Debug\netcoreapp3.1\Manager.dll
 C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\Manager\obj\Debug\netcoreapp3.1\Manager.pdb
+C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\Manager\obj\Debug\netcoreapp3.1\Manager.csprojAssemblyReference.cache
