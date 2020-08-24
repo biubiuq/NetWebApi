@@ -6,3 +6,12 @@ C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\Manager\obj\Debug\netco
 C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\Manager\obj\Debug\netcoreapp3.1\Manager.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\Manager\obj\Debug\netcoreapp3.1\Manager.dll
 C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\Manager\obj\Debug\netcoreapp3.1\Manager.pdb
+C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\Manager\bin\Debug\netcoreapp3.1\Manager.deps.json
+C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\Manager\bin\Debug\netcoreapp3.1\Manager.dll
+C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\Manager\bin\Debug\netcoreapp3.1\Manager.pdb
+C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\Manager\obj\Debug\netcoreapp3.1\Manager.csprojAssemblyReference.cache
+C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\Manager\obj\Debug\netcoreapp3.1\Manager.AssemblyInfoInputs.cache
+C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\Manager\obj\Debug\netcoreapp3.1\Manager.AssemblyInfo.cs
+C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\Manager\obj\Debug\netcoreapp3.1\Manager.csproj.CoreCompileInputs.cache
+C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\Manager\obj\Debug\netcoreapp3.1\Manager.dll
+C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\Manager\obj\Debug\netcoreapp3.1\Manager.pdb

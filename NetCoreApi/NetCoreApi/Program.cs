@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -18,6 +18,12 @@ namespace NetCoreApi
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+                .ConfigureLogging((context,loggingBuilder)=>
+                {
+                    loggingBuilder.AddFilter("System", LogLevel.Warning);
+                    loggingBuilder.AddFilter("Microsoft", LogLevel.Warning);
+                    loggingBuilder.AddLog4Net();
+                })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
