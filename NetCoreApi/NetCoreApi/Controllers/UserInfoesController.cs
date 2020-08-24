@@ -24,7 +24,7 @@ namespace NetCoreApi.Controllers
     [HttpPost]
     public void GetEntity2(
 
-        [ModelBinder(BinderType = typeof(EntityModelBinder2))]
+        [ModelBinder(BinderType = typeof(EntityModelBinder2<UserInfo>))]
        UserInfo   info)
     {
       info.Address = "";
