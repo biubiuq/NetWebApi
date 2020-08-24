@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Administrator\\source\\repos\\NetWebApi\\NetCoreApi\\NetCoreApi\\NetCoreApi.csproj": {}
+    "C:\\Users\\49506\\Source\\Repos\\NetWebApi\\NetCoreApi\\NetCoreApi\\NetCoreApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Administrator\\source\\repos\\NetWebApi\\NetCoreApi\\DapperManager\\DapperManager.csproj": {
+    "C:\\Users\\49506\\Source\\Repos\\NetWebApi\\NetCoreApi\\DapperManager\\DapperManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\source\\repos\\NetWebApi\\NetCoreApi\\DapperManager\\DapperManager.csproj",
+        "projectUniqueName": "C:\\Users\\49506\\Source\\Repos\\NetWebApi\\NetCoreApi\\DapperManager\\DapperManager.csproj",
         "projectName": "DapperManager",
-        "projectPath": "C:\\Users\\Administrator\\source\\repos\\NetWebApi\\NetCoreApi\\DapperManager\\DapperManager.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\source\\repos\\NetWebApi\\NetCoreApi\\DapperManager\\obj\\",
+        "projectPath": "C:\\Users\\49506\\Source\\Repos\\NetWebApi\\NetCoreApi\\DapperManager\\DapperManager.csproj",
+        "packagesPath": "C:\\Users\\49506\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\49506\\Source\\Repos\\NetWebApi\\NetCoreApi\\DapperManager\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\49506\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -65,32 +65,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.1.2, 3.1.2]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Administrator\\source\\repos\\NetWebApi\\NetCoreApi\\NetCoreApi\\NetCoreApi.csproj": {
+    "C:\\Users\\49506\\Source\\Repos\\NetWebApi\\NetCoreApi\\NetCoreApi\\NetCoreApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\source\\repos\\NetWebApi\\NetCoreApi\\NetCoreApi\\NetCoreApi.csproj",
+        "projectUniqueName": "C:\\Users\\49506\\Source\\Repos\\NetWebApi\\NetCoreApi\\NetCoreApi\\NetCoreApi.csproj",
         "projectName": "NetCoreApi",
-        "projectPath": "C:\\Users\\Administrator\\source\\repos\\NetWebApi\\NetCoreApi\\NetCoreApi\\NetCoreApi.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\source\\repos\\NetWebApi\\NetCoreApi\\NetCoreApi\\obj\\",
+        "projectPath": "C:\\Users\\49506\\Source\\Repos\\NetWebApi\\NetCoreApi\\NetCoreApi\\NetCoreApi.csproj",
+        "packagesPath": "C:\\Users\\49506\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\49506\\Source\\Repos\\NetWebApi\\NetCoreApi\\NetCoreApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\49506\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -103,8 +97,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Administrator\\source\\repos\\NetWebApi\\NetCoreApi\\DapperManager\\DapperManager.csproj": {
-                "projectPath": "C:\\Users\\Administrator\\source\\repos\\NetWebApi\\NetCoreApi\\DapperManager\\DapperManager.csproj"
+              "C:\\Users\\49506\\Source\\Repos\\NetWebApi\\NetCoreApi\\DapperManager\\DapperManager.csproj": {
+                "projectPath": "C:\\Users\\49506\\Source\\Repos\\NetWebApi\\NetCoreApi\\DapperManager\\DapperManager.csproj"
               }
             }
           }
@@ -187,12 +181,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.1.2, 3.1.2]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -201,7 +189,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
