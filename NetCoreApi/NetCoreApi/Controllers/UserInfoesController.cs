@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using DapperManager;
 using NetCoreApi.Data;
 using NetCoreApi.Model;
+using NetCoreApi.Common;
 
 namespace NetCoreApi.Controllers
 {
@@ -16,7 +17,7 @@ namespace NetCoreApi.Controllers
   public class UserInfoesController : ControllerBase
   {
     private readonly NetCoreApiContext _context;
-
+    private DbHelper helper = new DbHelper();
     public UserInfoesController(NetCoreApiContext context)
     {
       _context = context;
@@ -57,7 +58,10 @@ namespace NetCoreApi.Controllers
     /// <param name="info"></param>
     /// <returns></returns>
     [HttpGet]
-    public  ActionResult<ResponseA> GetUsers(int pageNum, int pageSize)
+    public  ActionResult<ResponseA> GetUsers(int pageNum, int pageSize,
+
+         [ModelBinder(BinderType = typeof(EntityModelBinder2<UserInfo>))]
+      UserInfo userInfo)
     {
       var aa = _context.UserInfo.Skip(pageSize * (pageNum - 1)).Take(pageSize).OrderByDescending(a => a.Create_Date).AsQueryable();
       if (aa == null)
@@ -120,6 +124,7 @@ namespace NetCoreApi.Controllers
         [ModelBinder(BinderType = typeof(EntityModelBinder2<UserInfo>))]
       UserInfo userInfo)
     {
+      var aa= _context.UserInfo.Where(helper.PageSearch(userInfo));
       userInfo.ID = Guid.NewGuid().ToString();
       _context.UserInfo.Add(userInfo);
       try

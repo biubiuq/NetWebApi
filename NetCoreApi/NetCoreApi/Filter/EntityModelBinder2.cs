@@ -12,17 +12,18 @@ using System.Threading.Tasks;
 
 namespace NetCoreApi
 {
+  /// <summary>
+  /// 针对post请求专门使用的modelBinder
+  /// </summary>
+  /// <typeparam name="T"></typeparam>
   public class EntityModelBinder2<T> : IModelBinder
   {
-    private readonly BodyModelBinder bodyModelBinder;
-
-   
-
     public Task BindModelAsync(ModelBindingContext bindingContext)
     {
       var request = bindingContext.ActionContext.HttpContext.Request;
       var elementType = bindingContext.ModelType;
       var entity = Activator.CreateInstance(elementType);
+   
       JObject data = request.HttpContext.Items["1"] as JObject;
       if (data == null)
       {
