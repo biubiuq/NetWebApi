@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using DapperManager;
 using NetCoreApi.Data;
+using log4net.Core;
+using Microsoft.Extensions.Logging;
 using NetCoreApi.Model;
 using NetCoreApi.Common;
 
@@ -14,35 +16,38 @@ namespace NetCoreApi.Controllers
 {
   [Route("api/[controller]/[action]")]
   [ApiController]
+ 
   public class UserInfoesController : ControllerBase
   {
     private readonly NetCoreApiContext _context;
-    private DbHelper helper = new DbHelper();
-    public UserInfoesController(NetCoreApiContext context)
+
+    public UserInfoesController(NetCoreApiContext context, ILogger<UserInfoesController> logger )
     {
       _context = context;
+            _logger = logger;
     }
-    [HttpPost]
-    public void GetEntity2(
-
-        [ModelBinder(BinderType = typeof(EntityModelBinder2<UserInfo>))]
-       UserInfo   info)
-    {
-      info.Address = "";
-    }
-    [HttpGet]
-    public void GetSSS(
-        [ModelBinder(BinderType = typeof(ArrayModelBinder))]
+        [HttpGet]
+        public void GetSSS(
+       [ModelBinder(BinderType = typeof(ArrayModelBinder))]
       List<String> ids)
-    {
-      ids.Add("aaa");
-    }
-    /// <summary>
-    /// 登录
-    /// </summary>
-    /// <param name="info"></param>
-    /// <returns></returns>
-    [HttpPost]
+        {
+            ids.Add("aaa");
+        }
+        [HttpPost]
+
+        public void GetEn([FromBody]
+       [ModelBinder(BinderType=typeof(EntityModelBinder))]
+        UserInfo info)
+        {
+            _logger.LogWarning("123123213");
+            info.Create_Date = DateTime.Now;
+        }
+        /// <summary>
+        /// 登录
+        /// </summary>
+        /// <param name="info"></param>
+        /// <returns></returns>
+        [HttpPost]
     public async Task<ActionResult<ResponseA>> GetUserInfo([FromBody] UserInfo info)
     {
       var aa = await _context.UserInfo.FirstOrDefaultAsync(x => x.Name == info.Name && x.Password == info.Password);
@@ -115,14 +120,12 @@ namespace NetCoreApi.Controllers
 
       return NoContent();
     }
-  
+ 
     // POST: api/UserInfoes
     // To protect from overposting attacks, enable the specific properties you want to bind to, for
     // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
     [HttpPost]
-    public async Task<ActionResult<UserInfo>> PostUserInfo(
-        [ModelBinder(BinderType = typeof(EntityModelBinder2<UserInfo>))]
-      UserInfo userInfo)
+    public async Task<ActionResult<UserInfo>> PostUserInfo(UserInfo userInfo)
     {
       var aa= _context.UserInfo.Where(helper.PageSearch(userInfo));
       userInfo.ID = Guid.NewGuid().ToString();
