@@ -24,30 +24,13 @@ namespace NetCoreApi.Controllers
     public UserInfoesController(NetCoreApiContext context, ILogger<UserInfoesController> logger )
     {
       _context = context;
-            _logger = logger;
     }
-        [HttpGet]
-        public void GetSSS(
-       [ModelBinder(BinderType = typeof(ArrayModelBinder))]
-      List<String> ids)
-        {
-            ids.Add("aaa");
-        }
-        [HttpPost]
-
-        public void GetEn([FromBody]
-       [ModelBinder(BinderType=typeof(EntityModelBinder))]
-        UserInfo info)
-        {
-            _logger.LogWarning("123123213");
-            info.Create_Date = DateTime.Now;
-        }
-        /// <summary>
-        /// 登录
-        /// </summary>
-        /// <param name="info"></param>
-        /// <returns></returns>
-        [HttpPost]
+    /// <summary>
+    /// 登录
+    /// </summary>
+    /// <param name="info"></param>
+    /// <returns></returns>
+    [HttpPost]
     public async Task<ActionResult<ResponseA>> GetUserInfo([FromBody] UserInfo info)
     {
       var aa = await _context.UserInfo.FirstOrDefaultAsync(x => x.Name == info.Name && x.Password == info.Password);
@@ -117,12 +100,20 @@ namespace NetCoreApi.Controllers
 
       return NoContent();
     }
- 
+    [HttpGet]
+    public void GetSSS(
+          [ModelBinder(BinderType = typeof(ArrayModelBinder))]
+      List<String> ids)
+    {
+               ids.Add("aaa");
+    }
     // POST: api/UserInfoes
     // To protect from overposting attacks, enable the specific properties you want to bind to, for
     // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
     [HttpPost]
-    public async Task<ActionResult<UserInfo>> PostUserInfo(UserInfo userInfo)
+    public async Task<ActionResult<UserInfo>> PostUserInfo(
+        [ModelBinder(BinderType = typeof(EntityModelBinder2<UserInfo>))]
+      UserInfo userInfo)
     {
       userInfo.ID = Guid.NewGuid().ToString();
       _context.UserInfo.Add(userInfo);
