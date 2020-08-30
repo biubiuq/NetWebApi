@@ -17,7 +17,6 @@ namespace DapperManager
        public string Name { get; set; }
        public string Password { get; set; }
        public string Address { get; set; }
-
        public string Token { get; set; }
         /// <summary>
        /// 状态0表示 启用，1表示禁用

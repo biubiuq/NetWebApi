@@ -15,5 +15,13 @@ namespace NetCoreApi.Data
         }
 
         public DbSet<DapperManager.UserInfo> UserInfo { get; set; }
+        public DbSet<DapperManager.Role> Role { get; set; }
+        public DbSet<DapperManager.Role_User> Role_User { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<DapperManager.Role_User>().HasKey(a => a.Role_Id);
+            modelBuilder.Entity<DapperManager.Role>().HasKey(a => a.Role_Id);
+        }
     }
 }

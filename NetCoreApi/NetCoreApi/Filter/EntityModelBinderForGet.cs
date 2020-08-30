@@ -10,7 +10,12 @@ namespace NetCoreApi.Filter
   {
     public Task BindModelAsync(ModelBindingContext bindingContext)
     {
-      throw new NotImplementedException();
+            var value = bindingContext.ValueProvider.GetValue(bindingContext.ModelName).ToString();
+            var elementType = bindingContext.ModelType;
+            var entity = Activator.CreateInstance(elementType);    
+
+
+            throw new NotImplementedException();
     }
   }
 }

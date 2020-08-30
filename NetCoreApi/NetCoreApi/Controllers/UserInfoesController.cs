@@ -20,6 +20,7 @@ namespace NetCoreApi.Controllers
   public class UserInfoesController : ControllerBase
   {
     private readonly NetCoreApiContext _context;
+        private readonly DbHelper helper = new DbHelper();
 
     public UserInfoesController(NetCoreApiContext context, ILogger<UserInfoesController> logger )
     {
