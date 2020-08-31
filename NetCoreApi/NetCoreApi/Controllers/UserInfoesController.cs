@@ -4,13 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+
 using DapperManager;
 using NetCoreApi.Data;
-using log4net.Core;
 using Microsoft.Extensions.Logging;
 using NetCoreApi.Model;
 using NetCoreApi.Common;
+using Microsoft.EntityFrameworkCore;
 
 namespace NetCoreApi.Controllers
 {

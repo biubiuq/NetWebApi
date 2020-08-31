@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using DapperManager;
 using NetCoreApi.Data;
+using NetCoreApi.Model;
 
 namespace NetCoreApi.Controllers
 {
@@ -29,17 +30,17 @@ namespace NetCoreApi.Controllers
         }
 
         // GET: api/RoleUser/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Role_User>> GetRole_User(string id)
+        [HttpGet]
+        public async Task<ActionResult<ResponseA>> GetRoleUser(string id)
         {
             var role_User = await _context.Role_User.FindAsync(id);
 
             if (role_User == null)
             {
-                return NotFound();
+                return new ResponseA() {Msg="ø’∂‘œÛ" };
             }
 
-            return role_User;
+            return new ResponseA() {Entity= role_User };
         }
 
         // PUT: api/RoleUser/5
