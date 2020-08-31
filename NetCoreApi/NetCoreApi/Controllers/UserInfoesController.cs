@@ -49,10 +49,10 @@ namespace NetCoreApi.Controllers
     [HttpGet]
     public  ActionResult<ResponseA> GetUsers(int pageNum, int pageSize,
 
-         [ModelBinder(BinderType = typeof(EntityModelBinder2<UserInfo>))]
+         [ModelBinder(BinderType = typeof(EntityModelBinderForGet<UserInfo>))]
       UserInfo userInfo)
     {
-      var aa = _context.UserInfo.Skip(pageSize * (pageNum - 1)).Take(pageSize).OrderByDescending(a => a.Create_Date).AsQueryable();
+      var aa = _context.UserInfo.Where(helper.PageSearch(userInfo)).Skip(pageSize * (pageNum - 1)).Take(pageSize).OrderByDescending(a => a.Create_Date).AsQueryable();
       if (aa == null)
       {
         return new ResponseA() { Status = false, Entity = aa, Msg = "未找到该数据" };
@@ -76,31 +76,18 @@ namespace NetCoreApi.Controllers
     // PUT: api/UserInfoes/5
     // To protect from overposting attacks, enable the specific properties you want to bind to, for
     // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-    [HttpPut("{id}")]
-    public async Task<IActionResult> PutUserInfo(string id, UserInfo userInfo)
+    [HttpPut]
+    public async Task<IActionResult> PutUserInfo(
+       [ModelBinder(BinderType = typeof(EntityModelBinder2<UserInfo>))]
+      UserInfo userInfo)
     {
-      if (id != userInfo.ID)
-      {
-        return BadRequest();
-      }
-
+     
       _context.Entry(userInfo).State = EntityState.Modified;
 
-      try
-      {
+      
         await _context.SaveChangesAsync();
-      }
-      catch (DbUpdateConcurrencyException)
-      {
-        if (!UserInfoExists(id))
-        {
-          return NotFound();
-        }
-        else
-        {
-          throw;
-        }
-      }
+      
+     
 
       return NoContent();
     }

@@ -332,3 +332,7 @@ C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\NetCoreApi\bin\Debug\netcoreapp
 C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\NetCoreApi\obj\Debug\netcoreapp3.1\NetCoreApi.csproj.CoreCompileInputs.cache
 C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\NetCoreApi\obj\Debug\netcoreapp3.1\NetCoreApi.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\NetCoreApi\obj\Debug\netcoreapp3.1\NetCoreApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\NetCoreApi\bin\Debug\netcoreapp3.1\log4net.config
+C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\NetCoreApi\bin\Debug\netcoreapp3.1\log4net.dll
+C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\NetCoreApi\bin\Debug\netcoreapp3.1\log4net.AspNetCore.dll
+C:\Users\Administrator\source\repos\NetWebApi\NetCoreApi\NetCoreApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Log4Net.AspNetCore.dll

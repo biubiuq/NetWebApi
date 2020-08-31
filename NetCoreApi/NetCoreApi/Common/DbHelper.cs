@@ -42,6 +42,14 @@ namespace NetCoreApi.Common
         }
      
       }
+      if (condition == null)
+      {
+        ConstantExpression constant = Expression.Constant("1");
+        ConstantExpression constant2 = Expression.Constant("1");
+        BinaryExpression binary = Expression.Equal(constant, constant2);
+        condition = binary;
+
+      }
       Expression<Func<T, bool>> expression = Expression.Lambda<Func<T, bool>>(condition, parameter);
       return expression;
     }

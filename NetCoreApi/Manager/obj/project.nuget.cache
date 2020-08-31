@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "U5sMkDq3bPhgLQnktgkKRbMe0snh6kg/n+v03S1PemuhKYxYiGaHDRSS8hez6JEKQJFhzR99O2eJqK5Gze3hpA==",
+  "dgSpecHash": "vwyGehCSXf42gmBGtdDmKBGbytSAl7XUVRk+58DmzVXGwEl5tlIxbpiVGXq4ZtnLw/b5u+3uR3HS3gqOFe6fcA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\49506\\Source\\Repos\\NetWebApi\\NetCoreApi\\Manager\\Manager.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Administrator\\source\\repos\\NetWebApi\\NetCoreApi\\Manager\\Manager.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
   "logs": []
 }
