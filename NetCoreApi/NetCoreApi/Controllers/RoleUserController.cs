@@ -33,11 +33,11 @@ namespace NetCoreApi.Controllers
         [HttpGet]
         public async Task<ActionResult<ResponseA>> GetRoleUser(string id)
         {
-            var role_User = await _context.Role_User.FindAsync(id);
+      var role_User = await _context.Role_User.Where(a => a.User_Id == id).FirstAsync();
 
             if (role_User == null)
             {
-                return new ResponseA() {Msg="¿Õ¶ÔÏó" };
+                return new ResponseA() {Msg="ç©ºå¯¹è±¡" };
             }
 
             return new ResponseA() {Entity= role_User };

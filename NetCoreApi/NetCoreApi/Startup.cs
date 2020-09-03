@@ -24,6 +24,7 @@ namespace NetCoreApi
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
         }
 
         public IConfiguration Configuration { get; }
@@ -85,8 +86,17 @@ namespace NetCoreApi
     
       services.AddDbContext<NetCoreApiContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("NetCoreApiContext")));
+      /////////////////////增加aop扩展测试
+      ///
+      ////addSingleton :正如名字所示它可以在你的进程中保持着一个实例，也就是说仅有一次实例化，不信的话代码演示一下
+      ///HomeController演示类  
+      services.AddSingleton<IOrderService, OrderService>();
+      ////正从名字所述：Scope 就是一个作用域，那在 webapi 或者 mvc 中作用域是多大呢？ 对的，就是一个请求，当然请求会穿透 Presentation, Application, Repository 等等各层，
+      ///在穿层的过程中肯定会有同一个类的多次注入，那这些多次注入在这个作用域下维持的就是单例，如下代码所示：
+      services.AddScoped<IOrderServiceb, OrderServiceb>();
+      services.AddTransient<IOrderService, OrderService>();
 
-        }
+    }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

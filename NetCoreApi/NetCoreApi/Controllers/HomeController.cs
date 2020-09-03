@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -12,11 +13,30 @@ namespace NetCoreApi.Controllers
   [ApiController]
   public class HomeController : ControllerBase
   {
+    public IOrderService orderService1;
+    public IOrderService orderService2;
+    public IOrderServiceb orderServiceb1;
+    public IOrderServiceb orderServiceb2;
+    public HomeController(IOrderService orderService1,IOrderService orderService2,
+      IOrderServiceb orderServiceb1, IOrderServiceb orderServiceb2
+      )
+    {
+    
+      this.orderService1 = orderService1;
+      this.orderService2 = orderService2;
+      this.orderServiceb1 = orderServiceb1;
+      this.orderServiceb2 = orderServiceb2;
+    }
     // GET: api/<HomeController>
     [HttpGet]
-    public IEnumerable<string> Login()
+    public string Login()
     {
-      return new string[] { "value1", "value2" };
+      Console.WriteLine($"{this.orderService1}\r\n{this.orderService2} \r\n ------");
+      Console.WriteLine(this.orderService1.Equals(orderService2));
+      Console.WriteLine($"{this.orderServiceb1}\r\n{this.orderServiceb2} \r\n ------");
+      Console.WriteLine(this.orderServiceb1.Equals(orderServiceb2));
+
+      return "helloworld";
     }
 
     // GET api/<HomeController>/5
