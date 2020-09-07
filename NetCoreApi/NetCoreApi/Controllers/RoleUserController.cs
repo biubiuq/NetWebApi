@@ -31,9 +31,9 @@ namespace NetCoreApi.Controllers
 
         // GET: api/RoleUser/5
         [HttpGet]
-        public async Task<ActionResult<ResponseA>> GetRoleUser(string id)
+        public  ActionResult<ResponseA> GetRoleUser(string id)
         {
-      var role_User = await _context.Role_User.Where(a => a.User_Id == id).FirstAsync();
+            var role_User =  _context.Role_User.Where(a => a.User_Id == id).SingleOrDefault();
 
             if (role_User == null)
             {
@@ -47,30 +47,16 @@ namespace NetCoreApi.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutRole_User(string id, Role_User role_User)
+        public async Task<IActionResult> PutRole_User(Role_User role_User)
         {
-            if (id != role_User.Role_Id)
-            {
-                return BadRequest();
-            }
+           
 
             _context.Entry(role_User).State = EntityState.Modified;
 
-            try
-            {
+          
                 await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!Role_UserExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            
+          
 
             return NoContent();
         }
@@ -79,26 +65,22 @@ namespace NetCoreApi.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Role_User>> PostRole_User(Role_User role_User)
+        public bool PostRole_User(Role_User role_User)
         {
-            _context.Role_User.Add(role_User);
-            try
+            Role_User exist = _context.Role_User.AsNoTracking().Where(a => a.User_Id == role_User.User_Id).SingleOrDefault();
+            if (exist is null)
             {
-                await _context.SaveChangesAsync();
+                _context.Role_User.Add(role_User);
             }
-            catch (DbUpdateException)
+            else
             {
-                if (Role_UserExists(role_User.Role_Id))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
+                _context.Role_User.Update(role_User);
             }
 
-            return CreatedAtAction("GetRole_User", new { id = role_User.Role_Id }, role_User);
+
+            _context.SaveChanges();
+
+            return true;
         }
 
         // DELETE: api/RoleUser/5

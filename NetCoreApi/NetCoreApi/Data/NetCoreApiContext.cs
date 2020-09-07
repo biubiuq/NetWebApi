@@ -21,7 +21,7 @@ namespace NetCoreApi.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<DapperManager.Role_User>().HasKey(a => a.Role_Id);
+            modelBuilder.Entity<DapperManager.Role_User>().HasKey(a => a.User_Id);
             modelBuilder.Entity<DapperManager.Role>().HasKey(a => a.Role_Id);
             modelBuilder.Entity<DapperManager.Permisson>().HasKey(a => a.KeyId);
 
