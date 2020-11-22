@@ -23,16 +23,16 @@ namespace NetCoreApi.Controllers
 
         // GET: api/Permissons
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Permisson>>> GetPermisson()
+        public async Task<ActionResult<IEnumerable<Permisson>>> GetPermissons()
         {
             return await _context.Permisson.ToListAsync();
         }
 
         // GET: api/Permissons/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Permisson>> GetPermisson(string id)
+        [HttpGet]
+        public async Task<ActionResult<Permisson>> GetPermissonId(string id)
         {
-            var permisson = await _context.Permisson.FindAsync(id);
+            var permisson = await _context.Permisson.Where(a=>a.Permisson_Id==id).SingleOrDefaultAsync();
 
             if (permisson == null)
             {
@@ -101,7 +101,7 @@ namespace NetCoreApi.Controllers
         }
 
         // DELETE: api/Permissons/5
-        [HttpDelete("{id}")]
+        [HttpDelete]
         public async Task<ActionResult<Permisson>> DeletePermisson(string id)
         {
             var permisson = await _context.Permisson.FindAsync(id);

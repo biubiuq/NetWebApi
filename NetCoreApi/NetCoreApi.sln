@@ -11,7 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DapperManager", "DapperMana
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SqlSugar", "SqlSugar", "{084546CA-F45F-416B-A2BC-8E642099E000}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Manager", "Manager\Manager.csproj", "{3FA81ED1-12EA-44E9-8407-176EAE8DBB99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Manager", "Manager\Manager.csproj", "{3FA81ED1-12EA-44E9-8407-176EAE8DBB99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Token", "Token\Token.csproj", "{1699BAF2-9386-4B12-869F-DB690378BC77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{24C9D750-0BE3-4EFA-9AD8-E3C63237FD06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +35,14 @@ Global
 		{3FA81ED1-12EA-44E9-8407-176EAE8DBB99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FA81ED1-12EA-44E9-8407-176EAE8DBB99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FA81ED1-12EA-44E9-8407-176EAE8DBB99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1699BAF2-9386-4B12-869F-DB690378BC77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1699BAF2-9386-4B12-869F-DB690378BC77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1699BAF2-9386-4B12-869F-DB690378BC77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1699BAF2-9386-4B12-869F-DB690378BC77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24C9D750-0BE3-4EFA-9AD8-E3C63237FD06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24C9D750-0BE3-4EFA-9AD8-E3C63237FD06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24C9D750-0BE3-4EFA-9AD8-E3C63237FD06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24C9D750-0BE3-4EFA-9AD8-E3C63237FD06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

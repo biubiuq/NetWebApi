@@ -99,6 +99,9 @@
             "projectReferences": {
               "C:\\Users\\49506\\Source\\Repos\\NetWebApi\\NetCoreApi\\DapperManager\\DapperManager.csproj": {
                 "projectPath": "C:\\Users\\49506\\Source\\Repos\\NetWebApi\\NetCoreApi\\DapperManager\\DapperManager.csproj"
+              },
+              "C:\\Users\\49506\\Source\\Repos\\NetWebApi\\NetCoreApi\\Token\\Token.csproj": {
+                "projectPath": "C:\\Users\\49506\\Source\\Repos\\NetWebApi\\NetCoreApi\\Token\\Token.csproj"
               }
             }
           }
@@ -119,6 +122,10 @@
             "Dapper.Contrib": {
               "target": "Package",
               "version": "[2.0.35, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.7, )"
             },
             "Microsoft.AspNetCore.Mvc.Formatters.Json": {
               "target": "Package",
@@ -195,6 +202,16 @@
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
+      }
+    },
+    "C:\\Users\\49506\\Source\\Repos\\NetWebApi\\NetCoreApi\\Token\\Token.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\49506\\Source\\Repos\\NetWebApi\\NetCoreApi\\Token\\Token.csproj",
+        "projectName": "Token",
+        "projectPath": "C:\\Users\\49506\\Source\\Repos\\NetWebApi\\NetCoreApi\\Token\\Token.csproj"
+      },
+      "frameworks": {
+        "net472": {}
       }
     }
   }

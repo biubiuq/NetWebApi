@@ -1,9 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -43,8 +47,27 @@ namespace NetCoreApi.Controllers
     [HttpGet("{id}")]
     public string Get(int id)
     {
-      return "value";
-    }
+            var _tokenManagement = new
+            {
+                sercet = "123456789123456789",
+                Issuer = "test.cn",
+                audience = "test",
+                accessExpiration = 30,
+                refreshExpiration = 60
+
+            };
+            var claims = new[]
+            {
+                new Claim(ClaimTypes.Name,"12313")
+            };
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_tokenManagement.sercet));
+            var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+            var jwtToken = new JwtSecurityToken(_tokenManagement.Issuer, _tokenManagement.audience, claims,
+                expires: DateTime.Now.AddMinutes(_tokenManagement.accessExpiration),
+                signingCredentials: credentials);
+           var  token = new JwtSecurityTokenHandler().WriteToken(jwtToken);
+            return token;
+        }
 
     // POST api/<HomeController>
     [HttpPost]
