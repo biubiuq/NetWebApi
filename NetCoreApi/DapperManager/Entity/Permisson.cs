@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DapperManager
 {
-  public  class Permisson
+    public class Permisson
     {
         public string Permisson_Id { get; set; }
         public string Name { get; set; }
@@ -13,5 +13,6 @@ namespace DapperManager
         public string KeyId { get; set; }
 
         public string Type { get; set; }
+        public virtual ICollection<Permisson> Permissons { get; set; }
     }
 }

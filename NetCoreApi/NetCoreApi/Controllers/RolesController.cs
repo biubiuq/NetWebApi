@@ -15,19 +15,33 @@ namespace NetCoreApi.Controllers
     public class RolesController : ControllerBase
     {
         private readonly NetCoreApiContext _context;
+        RolePermissonController RolePermisson;
 
         public RolesController(NetCoreApiContext context)
         {
             _context = context;
+            RolePermisson = new RolePermissonController(_context);
         }
 
         // GET: api/Roles
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Role>>> GetRole()
+        public async Task<ActionResult<IEnumerable<dynamic>>> GetRole()
         {
             return await _context.Role.ToListAsync();
         }
-
+        public async Task< IList<Role>> GetAllRolePermisson()
+        {
+         
+            ////先得到所有角色
+            IList<Role> lrole =  _context.Role.ToList();
+            
+            foreach (Role item in lrole)
+            {
+                item.Permissons =  RolePermisson.GetRolePermissonById(item.Role_Id).Result.Value as ICollection<Permisson>;
+            
+            }
+            return  lrole;
+        }
         // GET: api/Roles/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Role>> GetRole(string id)

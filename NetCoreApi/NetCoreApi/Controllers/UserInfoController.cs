@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DapperManager;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NetCoreApi.Entity;
 
@@ -26,6 +27,7 @@ namespace NetCoreApi.Controllers
 
     // GET api/<UserInfoController>/5
     [HttpGet("{id}")]
+    [Authorize(Policy="admin")]
     public UserInfo Get(string id)
     {
       return _manger.GetT(id);

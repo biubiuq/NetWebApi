@@ -1,6 +1,0 @@
-2020-08-18 22:38:27,976  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Now listening on: http://localhost:5000
- 2020-08-18 22:38:27,988  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Application started. Press Ctrl+C to shut down.
- 2020-08-18 22:38:27,993  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Hosting environment: Development
- 2020-08-18 22:38:27,996  INFO Microsoft.Hosting.Lifetime.? [?] - MESSAGE: Content root path: C:\Users\49506\Source\Repos\NetWebApi\NetCoreApi\NetCoreApi
- 2020-08-18 22:38:37,802  WARN NetCoreApi.Controllers.UserInfoesController.? [?] - MESSAGE: 123123213
- 
