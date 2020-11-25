@@ -6,6 +6,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 
@@ -42,7 +43,12 @@ namespace NetCoreApi.Controllers
 
       return "helloworld";
     }
+        [Authorize]
 
+        public void Get2()
+        {
+            
+        }
     // GET api/<HomeController>/5
     [HttpGet("{id}")]
     public string Get(int id)
@@ -61,7 +67,7 @@ namespace NetCoreApi.Controllers
                 new Claim(ClaimTypes.Name,"12313")
             };
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_tokenManagement.sercet));
-            var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+            var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);//使用什么算法
             var jwtToken = new JwtSecurityToken(_tokenManagement.Issuer, _tokenManagement.audience, claims,
                 expires: DateTime.Now.AddMinutes(_tokenManagement.accessExpiration),
                 signingCredentials: credentials);

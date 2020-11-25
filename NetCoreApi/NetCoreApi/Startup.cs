@@ -90,44 +90,35 @@ namespace NetCoreApi
             });
             var jwtOption = new
             {
-                sercet = "123456789123456789",
+                Secret = "123456789123456789",
                 Issuer = "test.cn",
-                audience = "test",
+                Audience = "test",
                 accessExpiration = 30,
                 refreshExpiration = 60
 
             };
+//            //一. TokenValidationParameters的参数默认值：
+//1. ValidateAudience = true,  ----- 如果设置为false,则不验证Audience受众人
+//2. ValidateIssuer = true ,   ----- 如果设置为false,则不验证Issuer发布人，但建议不建议这样设置
+//3. ValidateIssuerSigningKey = false,
+//4. ValidateLifetime = true,  ----- 是否验证Token有效期，使用当前时间与Token的Claims中的NotBefore和Expires对比
+//5. RequireExpirationTime = true, ----- 是否要求Token的Claims中必须包含Expires
+//6. ClockSkew = TimeSpan.FromSeconds(300), ----- 允许服务器时间偏移量300秒，即我们配置的过期时间加上这个允许偏移的时间值，才是真正过期的时间(过期时间 +偏移值)你也可以设置为0，ClockSkew = TimeSpan.Zero
             services.AddAuthentication(x=> {
                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-           }).AddJwtBearer(o =>
+           }).AddJwtBearer(x =>
            {
-               o.TokenValidationParameters = new TokenValidationParameters
+               x.RequireHttpsMetadata = false;
+               x.SaveToken = true;
+               x.TokenValidationParameters = new TokenValidationParameters
                {
-                   ValidIssuer = jwtOption.Issuer,
-                   IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtOption.sercet)),
-
-                   RequireSignedTokens = true,
-                   RequireExpirationTime = true,
-                   // SaveSigninToken = false,
-                   // ValidateActor = false,
-                   ValidateAudience = false,
-                   ValidateIssuer = true,
                    ValidateIssuerSigningKey = true,
-                   // ClockSkew = TimeSpan.FromSeconds(300),// 允许的服务器时间偏移量
-                   ValidateLifetime = true// 是否验证Token有效期，使用当前时间与Token的Claims中的NotBefore和Expires对比
-               };
-               o.Events = new JwtBearerEvents
-               {
-                   OnAuthenticationFailed = context =>
-                   {
-                       //Token expired
-                       if (context.Exception.GetType() == typeof(SecurityTokenExpiredException))
-                       {
-                           context.Response.Headers.Add("Token-Expired", "true");
-                       }
-                       return Task.CompletedTask;
-                   }
+                   IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtOption.Secret)),
+                   ValidIssuer = jwtOption.Issuer,
+                   ValidAudience = jwtOption.Audience,
+                   ValidateIssuer = false,
+                   ValidateAudience = false
                };
            });
 
@@ -166,6 +157,8 @@ namespace NetCoreApi
          //   app.UseAuthentication();
             app.UseRouting();
             app.UseSwagger();
+            app.UseAuthentication();//使用认证服务
+            app.UseAuthorization();//授权服务
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My Api");
